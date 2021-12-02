@@ -1,35 +1,14 @@
-.li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
+.a {
+  color: currentColor;
+  text-decoration: none;
 
-  a {
-    height: 100%;
-    width: 100%;
-  }
-  a svg {
-    overflow: hidden;
-  }
-  h5 {
-    position: absolute;
-    background-color: #fff;
-    top: -1.75rem;
-    left: 0.5rem;
-    white-space: nowrap;
-    opacity: 0;
-  }
-  &:hover {
-    cursor: pointer;
-    box-shadow: inset 0 0 3rem -2rem coral;
-    h5 {
-      opacity: 1;
-    }
-  }
+  transition: 0.1s ease;
 }
 
-.active {
-  font-weight: 700;
+.a:hover {
+  font-weight: 601;
+}
+
+.isActive {
+  font-weight: 601;
 }

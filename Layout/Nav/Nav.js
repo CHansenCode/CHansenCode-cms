@@ -1,42 +1,42 @@
 import { useState } from 'react';
 
 import Footer from './Footer/Footer';
-import Lists from './Lists/Lists';
 import Header from './Header/Header';
+import NavLink from './NavLink/NavLink';
 
 import css from './Nav.module.scss';
 
+import { navConstructor } from 'config';
+
 const Nav = ({ id, colors, setColors, showNav, setShowNav }) => {
-  const propStyle = {
-    aside: {
-      color: colors.pc,
-      background: colors.bg,
-    },
-  };
   return (
-    <>
-      <aside id="nav" style={propStyle.aside} className={css.aside}>
-        <nav className={css.nav} style={propStyle.nav}>
-          <Header colors={colors} className={css.header} />
-          <Lists colors={colors} className={css.navLinks} />
+    <aside id="nav" className={`bg ${css.aside}`}>
+      <nav className={`pc5b ${css.nav}`}>
+        <Header colors={colors} className={css.header} />
 
-          <Footer
-            colors={colors}
-            setColors={setColors}
-            showNav={showNav}
-            setShowNav={setShowNav}
-            className={css.footer}
-          />
-        </nav>
-      </aside>
+        <ul className={css.links}>
+          {navConstructor.map((cat, i) => (
+            <div key={`navCategory${i}`}>
+              <h5 className="pc7">{cat.category} :</h5>
 
-      <style jsx>
-        {`
-          #nav {
-          }
-        `}
-      </style>
-    </>
+              {cat.pages.map((link, i) => (
+                <NavLink key={link.title} href={link.href}>
+                  <li key={`navlink${i}`}>{link.title}</li>
+                </NavLink>
+              ))}
+            </div>
+          ))}
+        </ul>
+
+        <Footer
+          colors={colors}
+          setColors={setColors}
+          showNav={showNav}
+          setShowNav={setShowNav}
+          className={css.footer}
+        />
+      </nav>
+    </aside>
   );
 };
 

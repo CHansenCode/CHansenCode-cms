@@ -12,6 +12,7 @@ import css from './Footer.module.scss';
 
 const Footer = ({ colors, setColors, showNav, setShowNav, className }) => {
   const router = useRouter();
+  const { pathname } = useRouter();
 
   async function onLogOut(e) {
     e.preventDefault();
@@ -26,16 +27,39 @@ const Footer = ({ colors, setColors, showNav, setShowNav, className }) => {
         />
       </List>
 
-      <List className={css.settingsMenu}>
-        <NavLink href="/" children={<VscHome />} />
-        <NavLink href="/settings" children={<AiOutlineUserAdd />} />
-        <NavLink href="/calendar" children={<VscCalendar />} />
-        <NavLink href="/intercom" children={<BsChatSquareDots />} />
+      <List className={`${css.settingsMenu}`}>
+        <Button
+          className={`pc5b ${pathname === '/' && 'sc'}`}
+          onClick={() => router.push('/')}
+        >
+          <VscHome />
+        </Button>
+
+        <Button
+          className={`pc5b ${pathname === '/settings' && 'sc'}`}
+          onClick={() => router.push('/settings')}
+        >
+          <AiOutlineUserAdd />
+        </Button>
+
+        <Button
+          className={`pc5b ${pathname === '/calendar' && 'sc'}`}
+          onClick={() => router.push('/calendar')}
+        >
+          <VscCalendar />
+        </Button>
+
+        <Button
+          className={`pc5b ${pathname === '/intercom' && 'sc'}`}
+          onClick={() => router.push('/intercom')}
+        >
+          <BsChatSquareDots />
+        </Button>
       </List>
 
       <List className={`${css.functionMenu} ${!showNav && css.collapsed}`}>
-        <Button children="Log out" onClick={onLogOut} />
-        <Button onClick={() => setShowNav(!showNav)}>
+        <Button className="pc5b" children="Log out" onClick={onLogOut} />
+        <Button className="pc5b" onClick={() => setShowNav(!showNav)}>
           <IconCollapseExpand ternary={showNav} />
         </Button>
       </List>

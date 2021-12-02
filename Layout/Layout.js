@@ -7,6 +7,7 @@ import { metaInfo } from 'config';
 import css from './Layout.module.scss';
 
 export default function Layout({ children }) {
+  //#region colors
   const [colors, setColors] = useState({
     darkmode: true,
     dark: {
@@ -93,6 +94,7 @@ export default function Layout({ children }) {
     colors.light,
     colors.darkmode,
   ]);
+  //#endregion
 
   const [showNav, setShowNav] = useState(true);
 
@@ -134,6 +136,9 @@ export default function Layout({ children }) {
             background: ${colors && colors.bg};
           }
 
+          .pc05 {
+            color: ${colors && colors.pc05};
+          }
           .pc1 {
             color: ${colors && colors.pc1};
           }
@@ -145,6 +150,9 @@ export default function Layout({ children }) {
           }
           .pc7 {
             color: ${colors && colors.pc7};
+          }
+          .sc05 {
+            color: ${colors && colors.sc05};
           }
           .sc1 {
             color: ${colors && colors.sc1};
@@ -168,6 +176,12 @@ export default function Layout({ children }) {
           .pc3bg {
             background: ${colors && colors.pc3};
           }
+          .pc5bg {
+            background: ${colors && colors.pc5};
+          }
+          .pc7bg {
+            background: ${colors && colors.pc7};
+          }
           .sc05bg {
             background: ${colors && colors.sc05};
           }
@@ -177,24 +191,45 @@ export default function Layout({ children }) {
           .sc3bg {
             background: ${colors && colors.sc3};
           }
+          .sc5bg {
+            background: ${colors && colors.sc5};
+          }
+          .sc7bg {
+            background: ${colors && colors.sc7};
+          }
 
           .pc05b {
-            border: thin solid ${colors && colors.pc05} !important;
+            border: thin solid ${colors && colors.pc05};
           }
           .pc1b {
-            border: thin solid ${colors && colors.pc1} !important;
+            border: thin solid ${colors && colors.pc1};
           }
           .pc3b {
-            border: thin solid ${colors && colors.pc3} !important;
+            border: thin solid ${colors && colors.pc3};
+          }
+          .pc5b {
+            border: thin solid ${colors && colors.pc5};
+          }
+          .pc5br {
+            border-right: thin solid ${colors && colors.pc5};
+          }
+          .pc7b {
+            border: thin solid ${colors && colors.pc7};
           }
           .sc05b {
-            border: thin solid ${colors && colors.sc05} !important;
+            border: thin solid ${colors && colors.sc05};
           }
           .sc1b {
-            border: thin solid ${colors && colors.sc1} !important;
+            border: thin solid ${colors && colors.sc1};
           }
           .sc3b {
-            border: thin solid ${colors && colors.sc3} !important;
+            border: thin solid ${colors && colors.sc3};
+          }
+          .sc5b {
+            border: thin solid ${colors && colors.sc5};
+          }
+          .sc7b {
+            border: thin solid ${colors && colors.sc7};
           }
         `}
       </style>

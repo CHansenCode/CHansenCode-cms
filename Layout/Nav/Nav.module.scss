@@ -1,6 +1,6 @@
 .aside {
   position: fixed;
-  z-index: 100;
+  z-index: 10;
   top: 0;
   left: 0;
 
@@ -20,14 +20,14 @@
   display: grid;
   grid-template:
     'heading' auto
-    'lists' 1fr
+    'links' 1fr
     'footer' 9rem / 100%;
 
   .heading {
     grid-area: heading;
   }
-  .lists {
-    grid-area: lists;
+  .links {
+    grid-area: links;
   }
   .footer {
     grid-area: footer;
@@ -37,10 +37,24 @@
 //styling
 //
 .aside {
-  background-color: #fff;
   transition: 0.5s ease;
 }
 .nav {
-  border-right: solid;
+  border-top: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
   box-shadow: 0 0 5rem -3rem currentColor;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  h5 {
+    margin: 0;
+    padding: 0;
+    margin-left: -0.2rem;
+    margin-top: 0.5rem;
+  }
 }

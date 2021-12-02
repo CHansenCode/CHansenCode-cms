@@ -10,71 +10,78 @@
     'funcButtons' 3rem / 1fr;
 }
 
-.footer .styleMenu {
+.styleMenu,
+.settingsMenu,
+.functionMenu {
+  position: relative;
   height: 100%;
   width: 100%;
+  border-left: none;
+  border-right: none;
+}
 
+.styleMenu {
   display: grid;
   grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
   > button {
+    padding: 0;
     border: transparent;
+    > svg {
+      height: 40%;
+      width: 40%;
+    }
+    &:hover {
+      > svg {
+        height: 45%;
+        width: 45%;
+      }
+      box-shadow: none;
+    }
   }
 }
 
-.footer .settingsMenu {
+.settingsMenu {
   display: grid;
   grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
-  height: 100%;
-  width: 100%;
-  border-top: solid;
-  li {
+
+  button {
+    padding: 0;
     height: 100%;
     width: 100%;
-    border-right: solid;
-    padding: 0;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    border-left: none;
+    > svg {
+      height: 50%;
+      width: 50%;
     }
   }
-  :nth-last-child(1) {
+  > button:last-of-type {
     border-right: none;
   }
 }
 
-.footer .functionMenu {
-  position: relative;
-  height: 100%;
-  width: 100%;
-
+.functionMenu {
   display: flex;
-  flex-wrap: nowrap;
-  transition: 0.5s ease;
   > button {
-    transition: 0.5s ease;
-    border: none;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
   }
   > :first-child {
     width: 66%;
-    border-top: thin solid;
   }
   > :last-child {
+    border-right: 0;
     width: 34%;
-    border-left: thin solid;
-    border-top: thin solid;
   }
 }
-
-.footer .collapsed {
+.collapsed {
   width: calc(120% + 1px);
   > :first-child {
     width: calc(100% + 1px);
-    border-top: thin solid;
   }
   > :last-child {
+    border-top: thin solid;
+    border-right: thin solid;
     width: 20%;
-    border: thin solid currentColor !important;
-    border-bottom: transparent !important;
   }
 }
