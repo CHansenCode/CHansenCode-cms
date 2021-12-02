@@ -1,0 +1,53 @@
+$font: poppins, sans-serif;
+
+html * {
+  font-family: $font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $font;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+h4,
+p {
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+}
+h5,
+h6 {
+  font-weight: 400;
+  padding-bottom: 0.25rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 0.85rem;
+}
+h6 {
+  font-size: 0.85rem;
+  text-transform: italic;
+}
