@@ -1,0 +1,80 @@
+.footer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    'styleButtons' 3rem
+    'menuButtons' 3rem
+    'funcButtons' 3rem / 1fr;
+}
+
+.footer .styleMenu {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
+  > button {
+    border: transparent;
+  }
+}
+
+.footer .settingsMenu {
+  display: grid;
+  grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  border-top: solid;
+  li {
+    height: 100%;
+    width: 100%;
+    border-right: solid;
+    padding: 0;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  :nth-last-child(1) {
+    border-right: none;
+  }
+}
+
+.footer .functionMenu {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: nowrap;
+  transition: 0.5s ease;
+  > button {
+    transition: 0.5s ease;
+    border: none;
+  }
+  > :first-child {
+    width: 66%;
+    border-top: thin solid;
+  }
+  > :last-child {
+    width: 34%;
+    border-left: thin solid;
+    border-top: thin solid;
+  }
+}
+
+.footer .collapsed {
+  width: calc(120% + 1px);
+  > :first-child {
+    width: calc(100% + 1px);
+    border-top: thin solid;
+  }
+  > :last-child {
+    width: 20%;
+    border: thin solid currentColor !important;
+    border-bottom: transparent !important;
+  }
+}

@@ -1,0 +1,46 @@
+.aside {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+
+  * {
+    border-width: thin !important;
+  }
+
+  nav {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+}
+.nav {
+  display: grid;
+  grid-template:
+    'heading' auto
+    'lists' 1fr
+    'footer' 9rem / 100%;
+
+  .heading {
+    grid-area: heading;
+  }
+  .lists {
+    grid-area: lists;
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
+
+//styling
+//
+.aside {
+  background-color: #fff;
+  transition: 0.5s ease;
+}
+.nav {
+  border-right: solid;
+  box-shadow: 0 0 5rem -3rem currentColor;
+}

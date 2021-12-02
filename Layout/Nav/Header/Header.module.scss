@@ -1,0 +1,41 @@
+.logo {
+  position: relative;
+  max-width: 100%;
+  padding: 3rem;
+  padding-bottom: 1.5rem;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.cmsText {
+  position: relative;
+  height: 3rem;
+  overflow: hidden;
+  h4 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  p {
+    font-size: 60%;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    span {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.loggedInAs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}

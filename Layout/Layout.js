@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Head from 'next/head';
+import Nav from './Nav/Nav';
 
 import { metaInfo } from 'config';
+import css from './Layout.module.scss';
 
 export default function Layout({ children }) {
   const [colors, setColors] = useState({
@@ -99,7 +101,128 @@ export default function Layout({ children }) {
       <Head>
         <title>{metaInfo.title}</title>
       </Head>
-      <div>{children}</div>
+
+      <Nav
+        colors={colors}
+        setColors={setColors}
+        showNav={showNav}
+        setShowNav={setShowNav}
+      />
+
+      <Main showNav={showNav} color={colors} setColors={setColors}>
+        {children}
+      </Main>
+
+      <style jsx global>
+        {`
+          html {
+            color: ${colors.pc};
+            background: ${colors.bg};
+            transition: 0.5s ease;
+          }
+        `}
+      </style>
+      <style jsx global>
+        {`
+          .pc {
+            color: ${colors && colors.pc};
+          }
+          .sc {
+            color: ${colors && colors.sc};
+          }
+          .bg {
+            background: ${colors && colors.bg};
+          }
+
+          .pc1 {
+            color: ${colors && colors.pc1};
+          }
+          .pc3 {
+            color: ${colors && colors.pc3};
+          }
+          .pc5 {
+            color: ${colors && colors.pc5};
+          }
+          .pc7 {
+            color: ${colors && colors.pc7};
+          }
+          .sc1 {
+            color: ${colors && colors.sc1};
+          }
+          .sc3 {
+            color: ${colors && colors.sc3};
+          }
+          .sc5 {
+            color: ${colors && colors.sc5};
+          }
+          .sc7 {
+            color: ${colors && colors.sc7};
+          }
+
+          .pc05bg {
+            background: ${colors && colors.pc05};
+          }
+          .pc1bg {
+            background: ${colors && colors.pc1};
+          }
+          .pc3bg {
+            background: ${colors && colors.pc3};
+          }
+          .sc05bg {
+            background: ${colors && colors.sc05};
+          }
+          .sc1bg {
+            background: ${colors && colors.sc1};
+          }
+          .sc3bg {
+            background: ${colors && colors.sc3};
+          }
+
+          .pc05b {
+            border: thin solid ${colors && colors.pc05} !important;
+          }
+          .pc1b {
+            border: thin solid ${colors && colors.pc1} !important;
+          }
+          .pc3b {
+            border: thin solid ${colors && colors.pc3} !important;
+          }
+          .sc05b {
+            border: thin solid ${colors && colors.sc05} !important;
+          }
+          .sc1b {
+            border: thin solid ${colors && colors.sc1} !important;
+          }
+          .sc3b {
+            border: thin solid ${colors && colors.sc3} !important;
+          }
+        `}
+      </style>
     </>
   );
 }
+
+const Main = ({ children, shownav, colors, setColors }) => {
+  return (
+    <>
+      <main id="main_view">
+        {React.Children.map(children, child => {
+          return React.cloneElement(child, {
+            colors: colors,
+            setColors: setColors,
+          });
+        })}
+      </main>
+
+      <style jsx>
+        {`
+          #main_view {
+            color: ${colors && colors.pc};
+            background: ${colors && colors.bg};
+            margin-left: 14rem;
+          }
+        `}
+      </style>
+    </>
+  );
+};
