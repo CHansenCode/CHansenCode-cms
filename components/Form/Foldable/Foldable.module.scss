@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+$height: 2rem;
+
+.foldable {
+  overflow: hidden;
+  height: $height;
+  border: thin dashed;
+  border-radius: math.div($height, 2);
+
+  > button {
+    height: $height;
+    width: 100%;
+    padding: 0 0.5rem !important;
+    border: transparent;
+    border-radius: math.div($height, 2);
+    h5 {
+      margin: 0 1rem 0 0;
+      padding: 0;
+      font-weight: 700;
+    }
+    svg {
+      height: math.div($height, 2);
+      width: math.div($height, 2);
+    }
+  }
+}
+.foldable_open {
+  height: auto;
+  padding: 1rem;
+  background-color: rgba(0, 70, 90, 0.1);
+}

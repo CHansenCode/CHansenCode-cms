@@ -10,7 +10,7 @@ const Header = ({ colors, children }) => {
       <div className={css.logo}>
         <Link href="/">
           <a>
-            <Logo />
+            <Logo pc={colors.pc} sc={colors.sc} />
           </a>
         </Link>
       </div>

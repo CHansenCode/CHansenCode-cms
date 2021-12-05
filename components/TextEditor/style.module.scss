@@ -1,0 +1,58 @@
+.pageSelector {
+  margin-bottom: 2rem;
+}
+.pageSelector_buttons {
+  display: flex;
+  button {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+}
+
+.page {
+  input,
+  textarea {
+    font-size: 1.2rem;
+    border: thin solid transparent;
+  }
+  input:hover,
+  textarea:hover {
+    border: thin solid;
+  }
+}
+
+.pageCard {
+  display: grid;
+  grid-template: 'inputs descr button' 1fr / 1fr 1fr 4rem;
+  grid-gap: 1rem;
+
+  padding: 1rem;
+
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+  input,
+  textarea {
+    font-size: 1.2rem;
+  }
+}
+
+.page_paragraphWrapper {
+  padding: 1rem;
+}
+
+.paragraph {
+  position: relative;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+}

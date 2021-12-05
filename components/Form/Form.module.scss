@@ -1,0 +1,61 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  border-left: thin solid;
+}
+
+.scrollable {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.form {
+  position: relative;
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 2rem;
+
+  display: grid;
+  grid-template:
+    'header' 6rem
+    'basic' 1fr
+    'advanced' auto
+    'footer' auto / 1fr;
+}
+
+.form header {
+  display: flex;
+  justify-content: space-between;
+  > img {
+    object-fit: contain;
+    width: 15rem;
+    height: 5rem;
+  }
+}
+
+.form .saveButton {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showCloseBtn {
+  position: absolute;
+  z-index: 100;
+  top: 2.5rem;
+  transition: 0.5s ease;
+  > button {
+    border-radius: 50%;
+  }
+}
+
+.form input,
+.form textarea {
+  background-color: transparent;
+  border: thin solid currentColor !important;
+  box-shadow: transparent;
+  outline: transparent !important;
+}

@@ -1,0 +1,62 @@
+$borderRadius: 0.75rem;
+
+.item {
+  height: 2.5rem;
+  width: 100%;
+
+  margin: 0.5rem 0;
+  padding: 0.2rem;
+
+  border-radius: $borderRadius;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  display: grid;
+  grid-template: 'img texts btn' 1fr / 2.5rem 1fr 10rem;
+  grid-gap: 0.5rem;
+
+  > img {
+    height: 100%;
+    width: 2.5rem;
+  }
+
+  > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: $borderRadius;
+    overflow: hidden;
+
+    > h5 {
+      display: flex;
+      align-items: center;
+
+      box-shadow: inset 0.5rem 0.5rem 1.2rem -1.4rem black,
+        inset -0.5rem -0.5rem 1.2rem -1.5rem white;
+
+      padding: 0.1rem 0 0 0.5rem;
+      height: 100%;
+      width: 10rem;
+      border-radius: $borderRadius;
+      overflow: hidden;
+      margin: 1px 0.25rem;
+    }
+    > :nth-child(1) {
+      margin-left: 1rem;
+    }
+    > :nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+  > button {
+    opacity: 0.9;
+    font-size: 1.2rem;
+    font-weight: 501;
+    color: red;
+    padding: 0;
+    margin-right: 0.5rem;
+    border-radius: 100%;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

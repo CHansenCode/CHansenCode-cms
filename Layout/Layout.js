@@ -6,6 +6,8 @@ import Nav from './Nav/Nav';
 import { metaInfo } from 'config';
 import css from './Layout.module.scss';
 
+import { Dev } from 'components';
+
 export default function Layout({ children }) {
   //#region colors
   const [colors, setColors] = useState({
@@ -104,6 +106,9 @@ export default function Layout({ children }) {
         <title>{metaInfo.title}</title>
       </Head>
 
+      {/* MODALS */}
+      {process.env.NODE_ENV !== 'production' && <Dev colors={colors} />}
+
       <Nav
         colors={colors}
         setColors={setColors}
@@ -121,6 +126,13 @@ export default function Layout({ children }) {
             color: ${colors.pc};
             background: ${colors.bg};
             transition: 0.5s ease;
+          }
+          html * {
+            transition: 0.4s ease;
+          }
+          #nav {
+            width: 14rem;
+            left: ${showNav ? '0' : '-14rem'};
           }
         `}
       </style>
@@ -237,7 +249,7 @@ export default function Layout({ children }) {
   );
 }
 
-const Main = ({ children, shownav, colors, setColors }) => {
+const Main = ({ children, showNav, colors, setColors }) => {
   return (
     <>
       <main id="main_view">
@@ -254,7 +266,7 @@ const Main = ({ children, shownav, colors, setColors }) => {
           #main_view {
             color: ${colors && colors.pc};
             background: ${colors && colors.bg};
-            margin-left: 14rem;
+            margin-left: ${showNav ? '14rem' : '0'};
           }
         `}
       </style>

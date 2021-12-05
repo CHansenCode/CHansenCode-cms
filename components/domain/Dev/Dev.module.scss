@@ -1,0 +1,50 @@
+.outerDiv {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-height: 100vh;
+  min-width: 50vw;
+
+  overflow-y: scroll;
+  overflow-x: none;
+
+  padding: 3vw;
+
+  opacity: 0;
+
+  font-size: 12px;
+
+  pointer-events: none;
+
+  .innerDiv {
+    position: relative;
+    * {
+      font-size: 12px;
+    }
+  }
+}
+
+.outerDiv_open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.button {
+  position: fixed;
+  z-index: 10000;
+
+  top: 0.25rem;
+  left: 0.25rem;
+
+  background: transparent;
+  border: thin solid currentColor;
+
+  font-size: 12px;
+  padding: 0.25rem;
+  margin: 0;
+}
+.button:hover {
+  cursor: pointer;
+}

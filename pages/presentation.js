@@ -1,3 +1,9 @@
+import { Section } from 'components';
+
 export default function Presentation() {
-  return <div>presentation</div>;
+  return (
+    <Section title="presentation" foldable>
+      presentation
+    </Section>
+  );
 }
