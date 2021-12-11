@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  height: 3rem;
+
+  margin-bottom: 1rem;
+}
+
+.header > div {
+  width: min-content;
+  margin-right: 2rem;
+
+  h4 {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  > figure {
+    height: 0.5rem;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: 0.25rem;
+    box-shadow: inset 1rem 1rem 2rem -1rem currentColor;
+
+    transition: 0.4s ease;
+  }
+}
+
+.header > aside {
+  width: 100%;
+
+  padding: 0.25rem 0;
+
+  display: flex;
+
+  overflow: hidden;
+
+  > * {
+    margin-right: 1rem;
+    border-radius: 1rem;
+  }
+}

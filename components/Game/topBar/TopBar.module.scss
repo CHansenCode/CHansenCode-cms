@@ -1,0 +1,25 @@
+.topBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-area: topBar;
+}
+.resource {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: thin solid teal;
+  border-bottom: thin solid teal;
+  padding: 0 1rem;
+  svg {
+    height: 100%;
+    width: 1.5rem;
+  }
+  h4 {
+    padding-left: 0.5rem;
+    padding-top: 0.25rem;
+    height: 100%;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+}

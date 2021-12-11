@@ -1,0 +1,43 @@
+.main {
+  position: relative;
+  height: 640px;
+  width: 1080px;
+
+  box-shadow: 0 0 5rem -3rem currentColor;
+
+  border: thin solid currentColor;
+
+  display: grid;
+  grid-template:
+    'sideMenu topBar' 2rem
+    'sideMenu view' 1fr / 10rem 1fr;
+
+  #sideMenu {
+    grid-area: sideMenu;
+  }
+  #topBar {
+    grid-area: topBar;
+  }
+  #view {
+    grid-area: view;
+  }
+}
+
+//globals
+.main button {
+  margin: 0;
+  width: 100%;
+  background: transparent;
+  color: currentColor;
+  border: thin solid currentColor;
+  box-shadow: inset 0 0 0 0 currentColor;
+}
+.main button:hover {
+  color: mediumseagreen;
+  box-shadow: inset 0 0 2rem -1rem currentColor;
+  cursor: pointer;
+  border: thin solid mediumseagreen;
+}
+.main * {
+  transition: 0.3s ease;
+}

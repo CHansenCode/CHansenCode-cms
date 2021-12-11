@@ -1,0 +1,69 @@
+@import '../common';
+
+.subtask {
+  position: relative;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: gray;
+
+  > .editResolve {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    > button {
+      margin-right: 0.5rem;
+    }
+    > input {
+      width: 100%;
+    }
+  }
+  .deleteBtn {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+
+  :nth-child(3) {
+    color: rgb(190, 10, 10);
+  }
+}
+.resolved {
+  > .editResolve {
+    color: green;
+  }
+}
+
+.subtask input {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.subtask button {
+  height: 1rem;
+  width: 1rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.newSubtask {
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 0.5rem;
+
+  * {
+    font-weight: 300;
+  }
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}

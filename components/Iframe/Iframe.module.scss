@@ -1,0 +1,26 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  border-bottom: thin solid currentColor;
+  padding-bottom: 1px;
+  overflow: hidden;
+}
+
+.header {
+  height: 2rem;
+  border: thin solid;
+  border-bottom: none;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+
+  h5 {
+    padding-top: 0.25rem;
+  }
+}
+.iframe {
+  border: thin solid currentColor;
+}

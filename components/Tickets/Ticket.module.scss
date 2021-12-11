@@ -1,0 +1,120 @@
+.ticket {
+  display: grid;
+  grid-template: 'static buttons' 1fr / 1fr 3rem;
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+
+.staticInfo {
+  display: grid;
+  grid-template:
+    'info filler' 3rem
+    'info filler' auto
+    'time time' 1fr / 1fr 1.2fr;
+
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+
+  .info {
+    grid-area: info;
+  }
+  .filler {
+    grid-area: filler;
+  }
+  .time {
+    grid-area: time;
+  }
+}
+
+.info {
+  > div {
+    height: 3rem;
+    p {
+      padding: 0 0.5rem;
+    }
+  }
+}
+.filler {
+}
+.time {
+  display: flex;
+  justify-content: flex-end;
+  > div {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 2rem;
+    h6 {
+      padding-bottom: 0.2rem;
+    }
+    p {
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+.interactiveButtons {
+  display: flex;
+  flex-direction: column;
+
+  .status {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    grid-area: status;
+
+    > span {
+      padding: 0.25rem;
+      pointer-events: none;
+      opacity: 0;
+      position: absolute;
+      white-space: nowrap;
+      top: 0;
+      right: 130%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      > span {
+        opacity: 1;
+      }
+    }
+  }
+  > :nth-last-child(1) {
+    margin: 0;
+  }
+}
+
+.ticket {
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  //LABELS
+  h6 {
+    opacity: 0.6;
+    font-weight: 700;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+}
+
+.ticket_comment_input {
+}
+
+.ticket_comment_chat {
+  width: 100%;
+  resize: none;
+  background: transparent;
+}

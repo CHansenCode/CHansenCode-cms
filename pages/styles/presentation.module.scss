@@ -1,0 +1,52 @@
+//always visible
+
+$view_height: calc(100vh - 8rem);
+
+//First view, presentations
+.presentations_list {
+  min-height: $view_height;
+  padding: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.presentation_item {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+
+  padding: 0.5rem;
+  margin: 0 1rem 1rem 0;
+
+  border: thin solid;
+
+  > div {
+    padding: 0.25rem;
+    height: 100%;
+    &:hover {
+      box-shadow: 0 0 1rem -0.5rem currentColor;
+    }
+  }
+
+  #pres_del_btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    margin: 0;
+    padding: 0;
+    color: red;
+  }
+}
+
+//When activeId is filled, show slides list
+.slides_list {
+  min-height: $view_height;
+  padding: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.slides_create_new {
+  border: thin dashed !important;
+}

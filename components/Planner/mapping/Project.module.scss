@@ -1,0 +1,73 @@
+@import '../common';
+
+.project {
+  width: 100%;
+  overflow: hidden;
+}
+.project_open {
+  height: auto;
+  overflow: visible;
+}
+
+.project_card {
+  box-shadow: 0 0 2rem -1rem black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  display: grid;
+  grid-template: 'button inputs progress' 1fr / 4rem 1fr auto;
+
+  .project_card_openBtn {
+    p {
+      height: 2rem;
+      width: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      transition: 0.3s ease;
+    }
+    border: transparent;
+  }
+  .project_card_inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    > div {
+      display: flex;
+      align-items: flex-end;
+      h5 {
+        margin-right: 0.5rem;
+        width: 5rem;
+        text-align: right;
+        font-style: italic;
+        color: gray;
+      }
+    }
+  }
+}
+
+.project_card_open {
+  .project_card_openBtn p {
+    transform: rotate(90deg);
+  }
+}
+
+.project_card .circles {
+  display: flex;
+  .circle {
+    height: 5rem;
+    width: 5rem;
+    border: thin solid;
+    border-radius: 50%;
+  }
+}
+.stage_wrapper {
+  display: grid;
+  grid-template: '1 2 3 4' 1fr / 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0 1rem;
+}

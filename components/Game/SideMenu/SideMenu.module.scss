@@ -1,0 +1,11 @@
+.sideMenu {
+  width: 10rem;
+  height: 100%;
+
+  display: grid;
+  grid-template:
+    'state' 1fr
+    'saveLoad' auto / 1fr;
+
+  border-right: thin solid currentColor;
+}

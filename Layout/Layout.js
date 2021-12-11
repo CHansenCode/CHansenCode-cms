@@ -125,10 +125,10 @@ export default function Layout({ children }) {
           html {
             color: ${colors.pc};
             background: ${colors.bg};
-            transition: 0.5s ease;
+            transition: 0.1s ease;
           }
           html * {
-            transition: 0.4s ease;
+            transition: 0.1s ease;
           }
           #nav {
             width: 14rem;

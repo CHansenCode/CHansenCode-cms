@@ -1,0 +1,55 @@
+.slides_item {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+
+  padding: 0.5rem;
+  margin: 0 1rem 1rem 0;
+
+  border: thin solid;
+}
+
+.slides_item > div {
+  h5 {
+    letter-spacing: 1.5px;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.slides_item .opaque {
+  opacity: 0.3;
+  transition: 0.4s ease;
+}
+
+.slides_item h6 {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.slides_item > div:hover {
+  box-shadow: inset 0 0 1rem -0.5rem currentColor;
+  .opaque {
+    opacity: 1;
+  }
+}
+
+.slides_item {
+  p,
+  h5,
+  h6 {
+    padding: 0;
+  }
+}
+
+#slide_del_btn {
+  position: absolute;
+
+  top: 0.5rem;
+  right: 0.5rem;
+
+  padding: 0;
+  color: red;
+}

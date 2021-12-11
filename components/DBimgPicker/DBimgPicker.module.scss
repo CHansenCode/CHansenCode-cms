@@ -1,0 +1,35 @@
+.wrapper {
+  padding: 1rem;
+  border: thin solid;
+
+  transition: 0.3s ease;
+
+  > header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  > h4 {
+    margin-bottom: 1rem;
+  }
+}
+
+.img {
+  opacity: 0.8;
+  object-fit: cover;
+  margin: 0 0.5rem 0.5rem 0;
+}
+.img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.scrollWindow {
+  border: thin solid;
+  width: 21rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 400px;
+
+  overflow-y: auto;
+}

@@ -1,0 +1,29 @@
+.title_input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.title_input h6 {
+  padding: 0;
+  letter-spacing: 1.5px;
+}
+
+.title_input input {
+  padding: 0;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 20rem;
+  text-align: center;
+  border: transparent;
+  border-bottom: thin solid transparent;
+
+  &:hover {
+    border-bottom: thin solid;
+  }
+}

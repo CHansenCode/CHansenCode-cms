@@ -96,7 +96,7 @@ export default function Media() {
 
   return (
     <>
-      <Section>
+      <Section title="MEDIA GALLERY">
         <Button onClick={() => setCanDelete(!canDelete)}>
           {canDelete ? 'stop deleting' : 'allow deleting'}
         </Button>

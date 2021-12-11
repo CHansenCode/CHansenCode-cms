@@ -1,0 +1,16 @@
+.new_project,
+.new_stage,
+.new_task,
+.new_subtask {
+  height: 100%;
+  width: 100%;
+  border: thin dashed white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    outline: thin dashed orange;
+  }
+}

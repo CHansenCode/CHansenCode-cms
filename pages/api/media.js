@@ -36,8 +36,17 @@ export const createMedia = (formData, token) => async dispatch => {
   const header = {
     headers: { 'auth-token': token },
   };
+
+  const altText = formData.alt ? formData.alt : formData.title;
+
+  const addData = {
+    ...formData,
+    url: `https://media.chansen.design/${formData.category}/${formData.project}/${formData.filename}`,
+    alt: altText,
+  };
+
   try {
-    let { data } = await axios.post(url, formData, header);
+    let { data } = await axios.post(url, addData, header);
 
     console.log(data);
     dispatch({ type: CREATE_MEDIA, payload: data });
