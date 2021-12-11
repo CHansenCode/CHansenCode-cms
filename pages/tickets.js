@@ -115,6 +115,7 @@ export default function Tickets() {
         <FormAside toggle={controller.openForm}>
           {ticketForm.map((input, i) => (
             <InputField
+              key={`inputField${i}`}
               label={input.label}
               objKey={input.objKey}
               type={input.type}

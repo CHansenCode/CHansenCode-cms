@@ -3,6 +3,7 @@ import { useState } from 'react';
 import css from './Ticket.module.scss';
 
 import { Button, InputField } from 'chansencode-lib';
+
 import {
   AiOutlineHourglass,
   AiOutlineComment,
@@ -50,7 +51,7 @@ export function Ticket({ data, onClick }) {
             </div>
           </>
         ) : (
-          <Loading />
+          'loading'
         )}
       </div>
 
