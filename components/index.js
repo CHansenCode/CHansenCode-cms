@@ -24,3 +24,6 @@ export * from './Presentation';
 
 //domain
 export * from './domain';
+
+//planningApp
+export * from './ProgressionDiagram';

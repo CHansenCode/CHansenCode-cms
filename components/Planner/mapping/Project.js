@@ -146,6 +146,7 @@ export const Project = ({ onClickDelete, id }) => {
           >
             <p>➤</p>
           </Button>
+
           <div className={`${css.project_card_inputs}`}>
             <div>
               <h5>title</h5>
@@ -173,6 +174,7 @@ export const Project = ({ onClickDelete, id }) => {
               />
             </div>
           </div>
+
           <ProgressionDiagrams data={formData ? formData : data} />
         </ProjectCard>
 
@@ -296,7 +298,8 @@ const ProjectCard = ({ open, children, onClick }) => {
 };
 
 const ProgressionDiagrams = ({ data }) => {
-  return data && <div className={css.circles}>{data.title}</div>;
+  console.log(data);
+  return data && <div className={css.circles}>progress</div>;
 };
 
 const ProgressDiagram = ({ data }) => {
