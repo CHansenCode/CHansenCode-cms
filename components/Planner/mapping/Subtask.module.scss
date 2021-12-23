@@ -4,6 +4,10 @@
   position: relative;
   height: 2rem;
 
+  padding: 0.25rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 1rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,11 +18,20 @@
     width: 100%;
     display: flex;
     align-items: center;
+
     > button {
       margin-right: 0.5rem;
     }
-    > input {
+    input {
+      height: 1.5rem;
+      border-radius: 0;
       width: 100%;
+    }
+    .timeInput {
+      margin-left: 1rem;
+      width: 5rem;
+      display: flex;
+      align-items: center;
     }
   }
   .deleteBtn {
@@ -28,10 +41,6 @@
     justify-content: center;
     height: 1.75rem;
     width: 1.75rem;
-  }
-
-  :nth-child(3) {
-    color: rgb(190, 10, 10);
   }
 }
 .resolved {

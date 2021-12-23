@@ -40,6 +40,7 @@ export const Task = ({
     <div className={`pc3b ${css.task}`}>
       <div className={css.task_card}>
         <div>
+          <h6>title:</h6>
           <Input
             className="sc"
             value={data.title}
@@ -50,11 +51,17 @@ export const Task = ({
             <Button onClick={onClickDeleteTask}>x</Button>
           )}
         </div>
-        <Input
-          value={data.v}
-          ternary={controller.isEditing}
-          onChange={e => handleTaskChange(e, 'v')}
-        />
+        <div>
+          <h6>version:</h6>
+          <Input
+            value={data.v}
+            ternary={controller.isEditing}
+            onChange={e => handleTaskChange(e, 'v')}
+          />
+          {controller.isDeleting && (
+            <Button onClick={onClickDeleteTask}>x</Button>
+          )}
+        </div>
       </div>
 
       <div className={css.subtaskWrapper}>{children}</div>

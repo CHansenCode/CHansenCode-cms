@@ -2,15 +2,37 @@
 .new_stage,
 .new_task,
 .new_subtask {
-  height: 100%;
-  width: 100%;
-  border: thin dashed white;
+  height: 90%;
+  width: 90%;
+
+  opacity: 0.9;
+
+  border: thin dashed teal;
+  margin: 1rem 5%;
+  border-radius: 0.5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover {
+    opacity: 1;
+    border: thin solid teal;
     cursor: pointer;
-    outline: thin dashed orange;
   }
+}
+
+.new_project {
+  padding: 1rem 0;
+}
+.new_stage {
+  font-size: 1.5rem;
+}
+.new_task {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+}
+.new_subtask {
+  font-size: 0.9rem;
+  padding: 0.15rem 0;
 }

@@ -1,6 +1,8 @@
 import { Input } from '../Input';
 import { Button } from 'chansencode-lib';
 
+import { AiOutlineClockCircle } from 'react-icons/ai';
+
 import css from './Subtask.module.scss';
 
 export const Subtask = ({
@@ -61,6 +63,15 @@ export const Subtask = ({
           value={data.title}
           onChange={e => handleSubtaskChange(e, 'title', data)}
         />
+
+        <div className={css.timeInput}>
+          <AiOutlineClockCircle size="1rem" />
+          <Input
+            ternary={controller.isEditing}
+            value={data.timeRemaining}
+            onChange={e => handleSubtaskChange(e, 'timeRemaining', data)}
+          />
+        </div>
       </div>
 
       {controller.isDeleting && (
