@@ -25,5 +25,8 @@ export * from './Presentation';
 //domain
 export * from './domain';
 
+//InterCom
+export * from './Chat';
+
 //planningApp
 export * from './ProgressionDiagram';

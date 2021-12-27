@@ -6,3 +6,4 @@ export * from './texts';
 export * from './tickets';
 export * from './PlanningApp';
 export * from './Presentations';
+export * from './intercom';

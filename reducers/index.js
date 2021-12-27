@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import users from './users';
 import media from './media';
 import texts from './texts';
+import intercom from './intercom';
 import meta from './meta';
 import tickets from './tickets';
 import planning from './planningApp';
@@ -19,4 +20,5 @@ export const reducers = combineReducers({
   planning,
   presentation,
   errorHandler,
+  intercom,
 });

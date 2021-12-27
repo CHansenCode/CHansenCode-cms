@@ -1,0 +1,32 @@
+{
+  "files.exclude": {
+    //
+
+    //  dep's
+    "**/.git": true,
+    "**/.next": true,
+    "**/node_modules": true,
+
+    //  settings
+    "**/.gitignore": true,
+    "**/.prettierrc": true,
+    "**/.eslintrc.json": true,
+
+    //  proj.Settings
+    "**/package.json": true,
+    "**/package-lock.json": true,
+    "**/jsconfig.json": true,
+    "**/next.config.js": true,
+
+    //  folders
+    "**/lib": false,
+    "**/styles": false,
+
+    //  redux
+    "**/actions": true,
+    "**/reducers": true,
+
+    //  compile
+    "**/out": true
+  }
+}

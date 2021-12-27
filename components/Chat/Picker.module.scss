@@ -1,0 +1,29 @@
+.picker {
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 0 3rem -2.5rem black;
+
+  > h4 {
+    margin-bottom: 0.75rem;
+    border-top: thin solid transparent;
+    border-right: thin solid transparent;
+    border-left: thin solid transparent;
+  }
+
+  > button {
+    text-transform: capitalize;
+    font-size: 0.9rem;
+
+    margin-bottom: 0.5rem;
+
+    border-radius: 0.5rem;
+  }
+  > :nth-last-child(1) {
+    margin-bottom: 0;
+  }
+}

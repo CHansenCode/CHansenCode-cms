@@ -1,0 +1,48 @@
+.form {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 3rem -2rem black;
+
+  display: flex;
+}
+
+.form textarea,
+.placeholder_div {
+  height: 100%;
+  width: 100%;
+}
+.form textarea {
+  font-size: 1.1rem;
+
+  padding: 1rem;
+
+  background: transparent;
+  resize: none;
+
+  border-radius: 0.75rem;
+
+  box-shadow: inset 0 0 4rem -3.2rem black;
+
+  color: currentColor;
+}
+.form textarea::placeholder {
+  letter-spacing: 0.2rem;
+  opacity: 1;
+  color: currentColor;
+}
+.placeholder_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form > button {
+  padding: 0 2rem;
+  border-radius: 0.75rem;
+  margin-left: 1rem;
+}
+.focused {
+  outline: thin solid transparent;
+  border: thin solid currentColor;
+}

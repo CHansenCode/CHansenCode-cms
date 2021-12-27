@@ -1,0 +1,27 @@
+.bubble {
+  padding: 0.5rem;
+
+  width: 80%;
+  margin-top: 0.5rem;
+
+  border: thin solid;
+  border-radius: 0.5rem;
+
+  box-shadow: inset 0 0 5rem -4rem currentColor;
+}
+.bubble h6 {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.bubble p {
+  padding-left: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.me {
+  margin: 0.5rem auto 0 0;
+}
+.you {
+  margin: 0.5rem 0 0 auto;
+}

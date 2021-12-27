@@ -47,3 +47,11 @@ export const GET_TICKETS = 'GET_TICKETS';
 export const CREATE_TICKET = 'CREATE_TICKET';
 export const UPDATE_TICKET = 'UPDATE_TICKET';
 export const DELETE_TICKET = 'DELETE_TICKET';
+
+// ** Intercom
+export const GET_CHATS = 'GET_CHATS';
+export const CREATE_CHAT = 'CREATE_CHAT';
+export const POST_TO_CHAT = 'POST_TO_CHAT';
+export const DELETE_CHAT = 'DELETE_CHAT';
+export const DELETE_POST = 'DELETE_POST';
+export const EDIT_POST = 'EDIT_POST';
