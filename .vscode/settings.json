@@ -23,8 +23,8 @@
     "**/styles": false,
 
     //  redux
-    "**/actions": true,
-    "**/reducers": true,
+    "**/actions": false,
+    "**/reducers": false,
 
     //  compile
     "**/out": true

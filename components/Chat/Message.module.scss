@@ -1,4 +1,5 @@
 .bubble {
+  position: relative;
   padding: 0.5rem;
 
   width: 80%;
@@ -9,18 +10,40 @@
 
   box-shadow: inset 0 0 5rem -4rem currentColor;
 }
-.bubble h6 {
-  font-size: 0.7rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-}
-.bubble p {
-  padding-left: 0.35rem;
-  font-size: 0.9rem;
-}
 
+.bubble div {
+  h6 {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  p {
+    padding-left: 0.35rem;
+    font-size: 0.9rem;
+  }
+}
 .me {
+  display: grid;
+  grid-template: 'message edit' 1fr / 1fr 5rem;
   margin: 0.5rem auto 0 0;
+
+  aside {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    height: 2rem;
+    width: 2rem;
+
+    display: flex;
+    button {
+      height: 2rem;
+      width: 2rem;
+      padding: 0.25rem;
+      border: thin solid transparent;
+      border-radius: 50%;
+    }
+  }
 }
 .you {
   margin: 0.5rem 0 0 auto;

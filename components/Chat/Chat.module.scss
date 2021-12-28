@@ -1,12 +1,7 @@
 .chat_window {
+  grid-area: chat;
   height: 100%;
   width: 100%;
-
-  display: grid;
-  grid-template:
-    'messages' 1fr
-    'textarea' 12rem / 1fr;
-  gap: 1rem;
 
   overflow: hidden;
 }

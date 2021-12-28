@@ -1,179 +1,91 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Chat, Picker, Textarea } from 'components/Chat';
+import { Composition, Chat, Picker, Textarea } from 'components/Chat';
 import { Section } from 'components';
 
-import { getMyChats, postToChat } from 'pages/api';
+import { getMyChats, postToChat, getUsers, deletePost } from 'pages/api';
 
 export default function Intercom() {
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     username: 'cadmin',
     message: '',
   });
-  const dispatch = useDispatch();
-
   const [activeId, setActiveId] = useState('');
-  const [activeChat, setActiveChat] = useState();
 
   const username = 'cadmin';
+  const organization = 'chansencode';
 
   useEffect(() => {
-    dispatch(getMyChats(username));
-    console.log('dispatch getChats');
+    dispatch(getUsers());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(getMyChats(username, organization));
   }, [dispatch]);
 
-  const chats = [
-    {
-      _id: 'cowsRus',
-      users: [
-        {
-          username: 'cadmin',
-          lastUpdated: '2021-12-27',
-        },
-        {
-          username: 'sengberg',
-          lastUpdated: '2021-12-27',
-        },
-      ],
-      posts: [
-        {
-          username: 'cadmin',
-          message: 'first message',
-        },
-        {
-          username: 'sengberg',
-          message: '2nd message',
-        },
-        {
-          username: 'cadmin',
-          message: '3rd message',
-        },
-        {
-          username: 'cadmin',
-          message: '4th message',
-        },
-        {
-          username: 'sengberg',
-          message: '5th message',
-        },
-        {
-          username: 'cadmin',
-          message: 'first message',
-        },
-        {
-          username: 'sengberg',
-          message: '2nd message',
-        },
-        {
-          username: 'cadmin',
-          message: '3rd message',
-        },
-        {
-          username: 'cadmin',
-          message: '4th message',
-        },
-        {
-          username: 'sengberg',
-          message: '5th message',
-        },
-        {
-          username: 'cadmin',
-          message: 'first message',
-        },
-        {
-          username: 'sengberg',
-          message: '2nd message',
-        },
-        {
-          username: 'cadmin',
-          message: '3rd message',
-        },
-        {
-          username: 'cadmin',
-          message: '4th message',
-        },
-        {
-          username: 'sengberg',
-          message: '5th message',
-        },
-      ],
-    },
-    {
-      _id: 'foxsRus',
-      users: [
-        {
-          username: 'cadmin',
-          lastUpdated: '2021-12-27',
-        },
-        {
-          username: 'tinaanikka',
-          lastUpdated: '2021-12-27',
-        },
-      ],
-      posts: [
-        {
-          username: 'tinaanikka',
-          message: 'first message',
-        },
-        {
-          username: 'cadmin',
-          message: '2nd message',
-        },
-        {
-          username: 'tinaanikka',
-          message: '3rd message',
-        },
-        {
-          username: 'tinaanikka',
-          message: '4th message',
-        },
-        {
-          username: 'cadmin',
-          message: '5th message',
-        },
-      ],
-    },
-  ];
+  const chatData = useSelector(state => state.intercom);
 
-  useEffect(() => {
-    activeId
-      ? setActiveChat(chats.find((chat, i) => chat._id === activeId))
-      : setActiveChat();
-  }, [activeId]);
+  const activeChat = useSelector(
+    state =>
+      activeId &&
+      state &&
+      state.intercom.individualsChats.find(post => post._id === activeId),
+  );
 
-  async function postToChat(e, id, data) {
+  async function clear() {
+    setActiveId('');
+    setFormData({
+      username: 'cadmin',
+      message: '',
+    });
+  }
+
+  async function postMessage(e, id, formData) {
     e.preventDefault();
-    dispatch(postToChat(id, data));
+
+    try {
+      dispatch(postToChat(formData, id));
+    } catch (error) {
+      console.log(error);
+    }
+    setFormData({ ...formData, message: '' });
+  }
+
+  async function onDeletePost(postId) {
+    try {
+      dispatch(deletePost(postId, activeId));
+    } catch (error) {
+      console.log(error);
+    }
+    clear();
   }
 
   return (
     <>
       <Section>
-        <div id="chat_wrapper">
+        <Composition>
           <Picker
             username={username}
-            data={chats}
+            data={chatData && chatData}
             activeId={activeId}
             setActiveId={setActiveId}
           />
           <Chat
-            activeId={activeId}
             username={username}
-            data={chats}
             chat={activeChat}
-            onSubmit={e => postToChat(e, activeId, formData)}
-          >
-            <Textarea
-              activeId={activeId}
-              message={formData.message}
-              onSubmit={e => postToChat(e, activeId, formData)}
-              onChange={e =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-            />
-          </Chat>
-        </div>
+            onDeletePost={onDeletePost}
+          />
+          <Textarea
+            activeId={activeId}
+            message={formData.message}
+            onSubmit={e => postMessage(e, activeId, formData)}
+            onChange={e =>
+              setFormData({ ...formData, message: e.target.value })
+            }
+          />
+        </Composition>
       </Section>
 
       <style jsx>

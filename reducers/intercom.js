@@ -14,7 +14,9 @@ const intercom = (chats = initialProps, action) => {
     case CREATE_CHAT:
       return chats;
     case POST_TO_CHAT:
-      return chats;
+      return chats.map(p =>
+        p._id === action.payload._id ? action.payload : p,
+      );
     case DELETE_CHAT:
       return chats;
     case DELETE_POST:
@@ -26,6 +28,9 @@ const intercom = (chats = initialProps, action) => {
   }
 };
 
-const initialProps = [];
+const initialProps = {
+  organizationChats: [],
+  individualChats: [],
+};
 
 export default intercom;

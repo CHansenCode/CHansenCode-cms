@@ -4,7 +4,7 @@ import { Logo } from 'chansencode-lib';
 
 import css from './Header.module.scss';
 
-const Header = ({ colors, children }) => {
+const Header = ({ colors }) => {
   return (
     <div>
       <div className={css.logo}>

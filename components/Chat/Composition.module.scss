@@ -1,0 +1,12 @@
+.composition {
+  height: calc(100vh - 4rem);
+  display: grid;
+  grid-template:
+    'picker chat' 1fr
+    'picker textarea' 12rem / 12rem 1fr;
+  gap: 1rem;
+
+  > * {
+    border: thin dashed purple;
+  }
+}

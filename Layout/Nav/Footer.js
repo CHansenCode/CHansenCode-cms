@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import NavLink from '../NavLink/NavLink';
+import NavLink from './NavLink/NavLink';
 import { Button, List } from 'chansencode-lib';
 
 import { GiYinYang } from 'react-icons/gi';
@@ -10,7 +10,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 
 import css from './Footer.module.scss';
 
-const Footer = ({ colors, setColors, showNav, setShowNav, className }) => {
+const Footer = ({ colors, setColors, showNav, setShowNav, id }) => {
   const router = useRouter();
   const { pathname } = useRouter();
 
@@ -19,7 +19,7 @@ const Footer = ({ colors, setColors, showNav, setShowNav, className }) => {
   }
 
   return (
-    <footer className={`${css.footer} ${className}`}>
+    <footer id={id} className={css.footer}>
       <List className={css.styleMenu}>
         <Button
           children={<GiYinYang />}

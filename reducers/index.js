@@ -12,12 +12,15 @@ import presentation from './presentation';
 import errorHandler from './errorHandler';
 
 export const reducers = combineReducers({
+  //group
+  planning,
+
+  //individual
   users,
   tickets,
   media,
   meta,
   texts,
-  planning,
   presentation,
   errorHandler,
   intercom,
