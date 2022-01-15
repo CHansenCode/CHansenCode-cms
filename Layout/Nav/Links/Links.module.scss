@@ -1,0 +1,36 @@
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1.5rem;
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    margin-left: -0.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.link {
+  position: relative;
+  transition: 0.5s ease;
+  transform: translateX(0) scale(1);
+}
+.link::before {
+  position: absolute;
+  content: '>';
+  transition: 0.3s ease;
+
+  //Init
+  opacity: 0;
+  left: -1rem;
+}
+.link:hover {
+  transform: translateX(0.3rem);
+
+  &::before {
+    opacity: 1;
+    left: -0.5rem;
+  }
+}

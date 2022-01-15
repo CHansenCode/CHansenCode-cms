@@ -1,51 +1,44 @@
-import { useState } from 'react';
-import { Button } from 'chansencode-lib';
+import React, { useState } from 'react';
+
+import { Title } from './Title/Title';
+import { Menu } from './Menu/Menu';
+import { ButtonFold } from './ButtonFold/ButtonFold';
+import { ChildWrapper } from './ChildWrapper/ChildWrapper';
 
 import css from './Section.module.scss';
 
-export const Section = ({ title, foldable, folded, children }) => {
-  const [fold, setFold] = useState(folded ? true : false);
+export const Section = ({ children, ...props }) => {
+  const [fold, setFold] = useState(props.foldInit ? true : false);
 
-  async function handleHeaderClick() {
-    if (foldable) {
-      setFold(!fold);
-    }
+  async function toggleFold() {
+    props.foldable && setFold(!fold);
   }
+
+  const foldStyle = {
+    height: fold ? '5rem' : 'min-content',
+    minHeight: props.full ? 'calc(100vh)' : '1px',
+  };
 
   return (
     <section
-      className={`pc05bg pc3b ${css.section} ${fold && css.section_closed}`}
+      style={foldStyle}
+      className={`pc05bg ${css.section} ${fold && css.section_closed}`}
     >
-      {(title || foldable) && (
-        <header
-          className={css.header}
-          onClick={() => foldable && setFold(!fold)}
-        >
-          {title ? <SectionTitle title={title} fold={fold} /> : <div />}
+      <header className={css.header} onClick={toggleFold}>
+        <Title title={props.title} subtitle={props.subtitle} />
 
-          {foldable && (
-            <Button
-              className={`pc3b ${css.foldBtn} ${!fold && css.foldBtn_closed} ${
-                fold && 'sc'
-              }`}
-              onClick={() => setFold(!fold)}
-            >
-              <h5>{`^`}</h5>
-            </Button>
-          )}
-        </header>
-      )}
+        <Menu hasMenu={props.hasMenu}>{children && children[0]}</Menu>
 
-      <div>{children}</div>
+        <ButtonFold
+          foldable={props.foldable}
+          fold={fold}
+          onClick={toggleFold}
+        />
+      </header>
+
+      <ChildWrapper fold={fold} hasMenu={props.hasMenu}>
+        {children}
+      </ChildWrapper>
     </section>
-  );
-};
-
-const SectionTitle = ({ title }) => {
-  return (
-    <div className={css.section_title}>
-      <h4 className="sc">{title}</h4>
-      <div className="sc3b" />
-    </div>
   );
 };

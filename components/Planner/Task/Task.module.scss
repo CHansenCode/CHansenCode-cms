@@ -1,0 +1,45 @@
+@import '../common';
+
+.tasks {
+  padding: 0 1rem;
+
+  border: thin solid;
+  border-radius: 0.5rem;
+}
+
+.task {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.card {
+  padding: 0.5rem;
+  > button {
+    position: relative;
+  }
+  > input {
+    width: 100%;
+  }
+}
+
+.subtaskWrapper {
+  padding: 0 0.5rem;
+}
+
+.newTask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  * {
+    font-weight: 300;
+  }
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.new_task_btn {
+  padding: 0 1rem;
+}

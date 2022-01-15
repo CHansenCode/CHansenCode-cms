@@ -1,0 +1,76 @@
+$height: 2rem;
+
+.listItem {
+  height: calc($height + 1px);
+  padding: 0.25rem;
+
+  box-shadow: inset 0 0 0.3rem -0.2rem currentColor;
+  display: flex;
+  transition: 0.2s ease;
+}
+.listItem:hover {
+  box-shadow: inset 0 0 1rem -0.3rem currentColor;
+}
+
+//
+
+.img_wrapper {
+  min-height: 100%;
+  min-width: $height;
+
+  overflow: hidden;
+
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+//ALL
+.listItem h6 {
+  padding: 0.25rem 0 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  margin-left: 1rem;
+}
+
+.listItem {
+  > :nth-child(1) {
+    width: 1.5rem;
+  }
+  > :nth-child(2) {
+    width: 10rem;
+  }
+  > :nth-child(3) {
+    width: 8rem;
+  }
+  > :nth-child(4) {
+    width: 8rem;
+  }
+  > :nth-child(5) {
+    width: 8rem;
+  }
+  > :nth-child(6) {
+    width: 8rem;
+  }
+  > :nth-child(7) {
+    width: 8rem;
+  }
+  > :nth-child(8) {
+    width: 8rem;
+  }
+  > :nth-child(9) {
+    width: 8rem;
+  }
+  > :nth-child(10) {
+    width: 8rem;
+  }
+  > :nth-child(11) {
+    width: 8rem;
+  }
+  > :nth-child(12) {
+    width: 8rem;
+  }
+}

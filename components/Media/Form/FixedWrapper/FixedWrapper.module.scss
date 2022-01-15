@@ -1,0 +1,37 @@
+$width: 40rem;
+
+.fixed {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: 100vh;
+  width: 1px;
+
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+
+  box-shadow: 0 0 5rem -3rem currentColor;
+
+  transition: 0.4s ease;
+}
+.fixed_open {
+  width: $width;
+}
+
+.inner {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.btn_close {
+  position: absolute;
+}
+
+@media screen and (max-width: $width) {
+  .fixed_open {
+    width: 100vw;
+  }
+}

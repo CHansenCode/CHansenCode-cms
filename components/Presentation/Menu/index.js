@@ -1,5 +1,7 @@
 export * from './Menu';
 
-export * from './PresentationMenu';
-export * from './SlideMenu';
+// sub
 export * from './Settings';
+export * from './Buttons';
+export * from './Presentation';
+export * from './Slides';

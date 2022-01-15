@@ -1,0 +1,17 @@
+.select {
+  width: 100%;
+
+  border: thin solid transparent;
+  outline: thin solid transparent;
+
+  background: transparent;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.select > button {
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  margin: 0 0.25rem 0.15rem 0;
+}

@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}
+.wrapper > img {
+  max-height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.warning_empty {
+  position: absolute;
+
+  pointer-events: none;
+
+  border: thin solid;
+
+  z-index: 101;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0.4);
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warning_empty h4 {
+  letter-spacing: 1px;
+}

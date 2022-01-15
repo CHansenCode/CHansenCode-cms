@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+
 import { Section } from 'components';
+import { Menu } from 'components/Texts';
 import { Textarea, Input, Loading, Button, Form } from 'chansencode-lib';
 
 import { Paragraph, PageSelector, Page } from 'components/TextEditor';
@@ -15,8 +17,9 @@ import {
 } from 'pages/api';
 
 export default function Texts() {
+  //
   const dispatch = useDispatch();
-  //#region states
+
   const [controller, setController] = useState({
     isEditing: false,
     isDeleting: false,
@@ -33,13 +36,7 @@ export default function Texts() {
     pageTitle: '',
     paragraphs: [],
   });
-  const [copyFormData, setCopyFormData] = useState({
-    _id: '',
-    pageTitle: '',
-    paragraphs: [],
-  });
-  //#endregion
-  //#region init & listeners
+
   useEffect(() => {
     dispatch(getTexts());
   }, [dispatch]);
@@ -50,19 +47,8 @@ export default function Texts() {
   );
   useEffect(() => {
     selectedPage && setFormData(selectedPage);
-    selectedPage && setCopyFormData(selectedPage);
   }, [selectedPage]);
 
-  useEffect(() => {
-    let str1 = JSON.stringify(formData);
-    let str2 = JSON.stringify(copyFormData);
-
-    str1 === str2
-      ? setController({ ...controller, isEditing: false })
-      : setController({ ...controller, isEditing: true });
-  }, [formData]);
-  //#endregion
-  //#region interaction
   async function clear() {
     setFormData({
       _id: '',
@@ -76,27 +62,6 @@ export default function Texts() {
     });
     setActiveId(null);
   }
-  // async function onClickPatch() {
-  //   dispatch(updateText(activeId, formData, user.token));
-  // }
-  // async function onClickDeletePage() {
-  //   dispatch(deleteText(activeId, user.token));
-  //   clear();
-  // }
-  // async function onClickDeleteParagraph(id) {
-  //   let newPage = {
-  //     ...formData,
-  //     paragraphs: formData.paragraphs.filter(
-  //       para => !(para._id === id) && para,
-  //     ),
-  //   };
-  //   dispatch(deleteParagraph(activeId, newPage, user.token));
-  // }
-  // async function onSubmitNewPage(e) {
-  //   e.preventDefault();
-  //   dispatch(newPage(titleData.page, user.token));
-  //   setController({ ...controller, newPage: false });
-  // }
   async function onPageClick(id) {
     activeId === id ? (setActiveId(null), clear()) : setActiveId(id);
     setController({ ...controller, newPage: false });
@@ -108,11 +73,24 @@ export default function Texts() {
     setTitleData({ page: '', paragraph: '' });
     setController({ ...controller, newPage: false, newParagraph: false });
   }
-  //#endregion
+
+  const props = {
+    textsData,
+    controller,
+    setController,
+    activeId,
+    setActiveId,
+    titleData,
+    setTitleData,
+    formData,
+    setFormData,
+  };
 
   return (
-    <Section title="Texts editor">
-      {textsData ? (
+    <Section hasMenu title="Texts editor">
+      <Menu {...props} />
+
+      {/* {textsData ? (
         <PageSelector>
           {textsData.map((btn, i) => (
             <Button
@@ -128,9 +106,9 @@ export default function Texts() {
         </PageSelector>
       ) : (
         <Loading />
-      )}
+      )} */}
 
-      {activeId && (
+      {/* {activeId && (
         <Page
           controller={controller}
           formData={formData}
@@ -153,7 +131,7 @@ export default function Texts() {
 
           <NewParagraph />
         </Page>
-      )}
+      )} */}
     </Section>
   );
 }

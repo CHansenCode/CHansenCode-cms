@@ -1,0 +1,81 @@
+.footer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template:
+    'styleButtons' 3rem
+    'menuButtons' 3rem
+    'funcButtons' 3rem / 1fr;
+}
+
+.styleMenu,
+.settingsMenu,
+.functionMenu {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+
+.styleMenu {
+  display: grid;
+  grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
+  > button {
+    padding: 0;
+    border: transparent;
+    > svg {
+      height: 40%;
+      width: 40%;
+    }
+  }
+}
+
+.settingsMenu {
+  display: grid;
+  grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
+
+  button {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border-left: none;
+    > svg {
+      height: 50%;
+      width: 50%;
+    }
+  }
+  > button:last-of-type {
+    border-right: none;
+  }
+}
+
+.functionMenu {
+  display: flex;
+  > button {
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+  }
+  > :first-child {
+    width: 66%;
+  }
+  > :last-child {
+    border-right: 0;
+    width: 34%;
+  }
+}
+
+.collapsed {
+  width: calc(120% + 1px);
+  > :first-child {
+    width: calc(100% + 1px);
+  }
+  > :last-child {
+    border-top: thin solid;
+    border-right: thin solid;
+    width: 20%;
+  }
+}

@@ -4,36 +4,34 @@
   top: 0;
   left: 0;
   height: 100vh;
-
-  .nav {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
+  width: 14rem;
 }
 
+.nav {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  border-top: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+
+  box-shadow: 0 0 5rem -4rem black;
+}
 .nav {
   display: grid;
   grid-template:
     'header' auto
     'links' 1fr
-    'footer' 9rem / 100%;
+    'footer' auto / 100%;
 
-  #header {
+  > :nth-child(1) {
     grid-area: header;
   }
-  .links {
+  > :nth-child(2) {
     grid-area: links;
   }
-  #footer {
+  > :nth-child(3) {
     grid-area: footer;
   }
-}
-
-//styling
-.nav {
-  border-top: none !important;
-  border-left: none !important;
-  border-bottom: none !important;
-  box-shadow: 0 0 5rem -3rem currentColor;
 }

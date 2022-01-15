@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  height: 1.75rem;
+  padding: 0.25rem;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.isResolved {
+  color: green;
+  background: rgba(0, 128, 0, 0.08);
+}
+.inputs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .timeInput {
+    max-width: 4rem;
+    margin-left: 0.5rem;
+  }
+}
+.resolve_radio {
+  margin-right: 0.5rem;
+  button {
+    padding: 0;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+  }
+}

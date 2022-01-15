@@ -1,0 +1,27 @@
+.a {
+  position: relative;
+  color: currentColor;
+  text-decoration: none;
+  transition: 0.1s ease;
+}
+
+.a::before {
+  position: absolute;
+  content: '>';
+  transition: 0.4s ease;
+
+  //init
+  opacity: 0;
+  left: -1rem;
+}
+.a:focus {
+  outline: none;
+
+  &::before {
+    left: -0.5rem;
+    opacity: 1;
+  }
+}
+.isActive {
+  font-weight: 601;
+}

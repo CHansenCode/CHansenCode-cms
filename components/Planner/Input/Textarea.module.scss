@@ -1,0 +1,41 @@
+.wrapper {
+  width: 100%;
+}
+
+.wrapper header {
+  display: flex;
+  h6 {
+    margin: -1px;
+
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+.wrapper textarea {
+  font-size: 0.9rem;
+  height: 100%;
+  width: 100%;
+  padding: 0.25rem;
+  color: currentColor;
+
+  background: transparent;
+
+  resize: none;
+  outline: none;
+  border: thin solid transparent;
+}
+.wrapper .isEditing {
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0 0.5rem -0.25rem currentColor;
+  border: thin solid lightgray;
+
+  color: teal;
+}
+.wrapper textarea:focus {
+  outline: none;
+  background-color: rgba(200, 200, 100, 0.05);
+}

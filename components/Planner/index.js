@@ -1,4 +1,11 @@
-export * from './mapping';
-export * from './Input';
 export * from './ControllerMenu';
-export * from './Progress';
+
+export * from './Init';
+
+export * from './Project';
+export * from './Stage';
+export * from './Task';
+export * from './Subtask';
+
+export * from './Input';
+export * from './Delete'; // 'DeleteProject', 'DeleteStage', 'DeleteTask', 'DeleteSubtask',

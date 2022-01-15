@@ -1,37 +1,50 @@
 .menu {
-  padding: 1rem;
-  display: flex;
-  opacity: 0.5rem !important;
+  position: relative;
 
-  .btn {
-    opacity: 0.7;
-  }
-  button {
-    font-size: 1.25rem;
-    height: 2rem;
-    min-width: 2rem;
-    padding: 0 0.25rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-  }
+  height: 2.5rem;
+  width: min-content;
+
+  padding: 0.5rem;
+
   > div {
+    border-radius: 1.25rem;
     display: flex;
-    opacity: 0;
-    width: 1px;
-    overflow: hidden;
-    > button {
-      font-size: 0.9rem;
-      padding: 0 0.25rem;
+    align-items: center;
+
+    button {
+      white-space: nowrap;
+      border-radius: 0.75rem;
+      h5 {
+        text-transform: uppercase;
+      }
+    }
+    > div {
+      display: flex;
     }
   }
 }
 
-.open {
-  .btn {
-    opacity: 1;
-  }
-  > div {
-    width: 100%;
-    opacity: 1;
-  }
+.menu button {
+  font-size: 1rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  padding: 0 0.25rem;
+  margin-right: 0.25rem;
+  border-top: none;
+
+  border: none;
+
+  transition: 0.3s ease;
+}
+
+//init
+.menu > div > div > button {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.5rem);
+}
+.menu > div > div .show_btn {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
 }

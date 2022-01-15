@@ -1,73 +1,21 @@
-import { useState } from 'react';
+import { Presentation } from './Presentation';
+import { Slides } from './Slides';
+import { GoBack } from './Buttons';
 
-import { SlideMenu, PresentationMenu, Settings } from 'components';
-import { Button, Input } from 'chansencode-lib';
-
-import { AiOutlineRollback, AiOutlineSetting } from 'react-icons/ai';
+import { Settings } from './Settings';
 
 import css from './Menu.module.scss';
 
-export const Menu = ({
-  activeId,
-  setActiveId,
-  activeSlide,
-  setActiveSlide,
-  controller,
-  setController,
-  formData,
-  setFormData,
-  onUpdate,
-  onDelete,
-}) => {
-  async function onClickGoBack() {
-    activeSlide ? setActiveSlide(null) : setActiveId(null);
-  }
+export const Menu = ({ ...props }) => {
   return (
-    <div className={`bg pc3b ${css.topBar}`}>
-      <>
-        <h4 className="sc">PRESENTATIONS</h4>
+    <div className={css.topBar}>
+      <GoBack {...props} />
 
-        {activeId ? (
-          //go back from 'slide' or 'presentation'
-          <Button onClick={onClickGoBack}>
-            <AiOutlineRollback size="1rem" />
-          </Button>
-        ) : (
-          <div className="grid-filler"></div>
-        )}
-      </>
+      {props.activeId && props.activeSlide
+        ? props.formData && <Slides {...props} />
+        : props.formData && <Presentation {...props} />}
 
-      <>
-        {/* SLIDE OR PRESENTATION MENU */}
-        {activeId && activeSlide ? (
-          <>
-            {formData && (
-              <SlideMenu
-                activeSlide={activeSlide}
-                setActiveSlide={setActiveSlide}
-                formData={formData}
-                setFormData={setFormData}
-              />
-            )}
-          </>
-        ) : (
-          <>
-            {formData && (
-              <PresentationMenu formData={formData} setFormData={setFormData} />
-            )}
-          </>
-        )}
-      </>
-
-      <>
-        {/* SETTINGS BUTTONS */}
-        <Settings
-          controller={controller}
-          activeId={activeId}
-          setController={setController}
-          onUpdate={onUpdate}
-        />
-      </>
+      <Settings {...props} />
     </div>
   );
 };

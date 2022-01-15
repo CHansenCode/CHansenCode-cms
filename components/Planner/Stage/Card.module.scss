@@ -1,0 +1,26 @@
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.card > header {
+  padding: 0.5rem;
+  box-shadow: 0 1rem 1rem -0.8rem rgba(0, 0, 0, 0.2);
+  border: thin solid rgba(0, 128, 128, 0.1);
+
+  input {
+    font-size: 1.1rem;
+  }
+
+  > aside {
+    grid-area: graphic;
+
+    height: 4rem;
+    width: 4rem;
+
+    border: thin solid;
+  }
+}
+.inputs {
+  padding: 1rem;
+}

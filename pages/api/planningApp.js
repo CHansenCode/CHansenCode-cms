@@ -1,17 +1,35 @@
 import axios from 'axios';
 
-import { uniqueIdGenerator } from 'lib';
 import { baseURL } from 'config';
 const url = `${baseURL}/planning`;
+
 import * as api from './api';
 
-import { GET_PLANS, CREATE_PLAN, UPDATE_PLAN, DELETE_PLAN } from 'actions';
+import { uniqueIdGenerator } from 'lib';
 
-export const getPlans = token => async dispatch => {
+import {
+  GET_PLANS,
+  GET_PLAN,
+  CREATE_PLAN,
+  UPDATE_PLAN,
+  DELETE_PLAN,
+} from 'actions';
+
+export const getPlans = () => async dispatch => {
   try {
-    const { data } = await api.getMe(url, token);
+    const { data } = await api.getMe(url);
 
     dispatch({ type: GET_PLANS, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getPlan = id => async dispatch => {
+  try {
+    const { data } = await api.getMe(`${url}/${id}`);
+
+    dispatch({ type: GET_PLAN, payload: data });
   } catch (error) {
     console.log(error);
   }
@@ -40,7 +58,6 @@ export const createPlan = () => async dispatch => {
   try {
     let { data } = await axios.post(url, formData);
 
-    console.log(data);
     dispatch({ type: CREATE_PLAN, payload: data });
   } catch (error) {
     console.log(error);
@@ -50,7 +67,7 @@ export const createPlan = () => async dispatch => {
 export const updatePlan = formData => async dispatch => {
   try {
     let { data } = await axios.patch(`${url}/${formData._id}`, formData);
-    console.log('patchCall', data);
+
     dispatch({ type: UPDATE_PLAN, payload: data });
   } catch (error) {
     console.log(error);

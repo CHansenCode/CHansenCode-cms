@@ -1,0 +1,41 @@
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.days {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template: 'mon tue wed thu fri sat sun' 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.day {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: thin solid;
+
+  display: grid;
+  grid-template-rows: 2rem 1fr;
+}
+
+.hours {
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+}
+.hours > :nth-child(1) {
+  border-top: thin solid;
+}
+.hours > :nth-last-child(1) {
+  border-bottom: none;
+}
+
+.hour {
+  border-bottom: thin solid;
+}

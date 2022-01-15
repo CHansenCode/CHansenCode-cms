@@ -1,0 +1,6 @@
+.main {
+  height: calc(100vh - 5.1rem);
+
+  display: grid;
+  grid-template: 'list form' 1fr / 1fr auto;
+}

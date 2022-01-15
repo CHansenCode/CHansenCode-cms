@@ -1,0 +1,42 @@
+@import '../common';
+
+.subtasks {
+  position: relative;
+}
+
+.subtasks header {
+  display: flex;
+  justify-content: space-between;
+  border: thin solid transparent;
+  margin-bottom: 0.5rem;
+  h6 {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-right: 0.5rem;
+  }
+  > button {
+    border: transparent;
+    height: 1rem;
+    width: 1rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.new_subtask {
+  width: 100%;
+  padding: 0 !important;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem !important;
+  border: thin dashed currentColor !important;
+
+  text-transform: uppercase;
+
+  color: green !important;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}

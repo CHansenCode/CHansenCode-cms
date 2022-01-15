@@ -1,0 +1,16 @@
+@import '../common';
+
+.stages {
+  border-top: none !important;
+  margin: 0 1rem;
+
+  display: grid;
+  grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
+
+  gap: 1rem;
+}
+
+.stage {
+  height: min-content;
+  width: 100%;
+}

@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "chansencode-lib": "^0.1.37",
+    "chansencode-lib": "^0.1.43",
     "iron-session": "^6.0.4",
     "next": "12.0.4",
     "react": "17.0.2",

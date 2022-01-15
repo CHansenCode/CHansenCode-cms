@@ -1,0 +1,60 @@
+.card {
+  position: relative;
+
+  border: thin solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3rem -2rem black;
+}
+.card {
+  display: grid;
+  gap: 0.5rem;
+  grid-template:
+    'title title title' auto
+    'inputs inputs progress' 1fr
+    'footer footer progress' 2.5rem / 3rem 1fr 1fr;
+
+  > header {
+    grid-area: title;
+  }
+  > button {
+    grid-area: btn;
+  }
+  .inputs {
+    grid-area: inputs;
+  }
+  .footer {
+    grid-area: footer;
+  }
+  > aside {
+    grid-area: progress;
+  }
+}
+
+.card > header {
+  padding: 0.5rem;
+  box-shadow: inset 0 -1rem 1rem -0.5rem rgba(0, 0, 0, 0.1);
+
+  input {
+    max-width: 30rem;
+    font-size: 1.5rem;
+  }
+}
+.inputs {
+  padding: 0.5rem;
+
+  display: grid;
+  gap: 1rem;
+  grid-template: 'a b' 1fr / 20rem 1fr;
+}
+.card > aside {
+  padding: 0.5rem;
+  display: grid;
+  grid-template: 'a b c d' 1fr / 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+
+  > * {
+    padding: 0.5rem;
+
+    border: thin solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1rem -0.3rem rgba(0, 0, 0, 0.3);
+  }
+}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Section } from 'components';
 import { Menu, Slide, SlideItem } from 'components';
+import { Presentations } from 'components/Presentation';
 import { Button } from 'chansencode-lib';
 
 import css from './styles/presentation.module.scss';
@@ -15,10 +16,9 @@ import {
   createNewSlide,
 } from 'pages/api';
 
-export default function Presentations() {
+export default function SlideShow() {
   const dispatch = useDispatch();
 
-  //#region states
   const [controller, setController] = useState({
     isEditing: false,
     isDeleting: false,
@@ -32,7 +32,6 @@ export default function Presentations() {
     descr: '',
     slides: [],
   });
-  //#endregion
 
   //#region init & listeners
   useEffect(() => {
@@ -64,7 +63,6 @@ export default function Presentations() {
   }, [controller.autoSaveOnEdit]);
   //#endregion
 
-  //#region base funcs
   async function createPost() {
     dispatch(createPresentation());
   }
@@ -88,48 +86,28 @@ export default function Presentations() {
     slides.splice(index - 1, 0, movingObject);
     setFormData({ ...formData, slides: slides });
   }
-  //#endregion
+
+  const props = {
+    data,
+    activeId,
+    setActiveId,
+    activeSlide,
+    setActiveSlide,
+    formData,
+    setFormData,
+    controller,
+    setController,
+    onUpdate: updatePost,
+  };
 
   return (
     <>
-      <Section>
-        <Menu
-          activeId={activeId}
-          setActiveId={setActiveId}
-          activeSlide={activeSlide}
-          setActiveSlide={setActiveSlide}
-          formData={formData}
-          setFormData={setFormData}
-          controller={controller}
-          setController={setController}
-          onUpdate={updatePost}
-        />
+      <Section hasMenu full title="Presentations">
+        <Menu {...props} />
 
         <>
           {!activeId ? (
-            //PRESENTATIONS LIST
-            <>
-              <ul className={css.presentations_list}>
-                {data.map((p, i) => (
-                  <PresentationItem
-                    key={p._id}
-                    data={p}
-                    onDelete={() => deletePost(p._id)}
-                    showDelete={controller.isDeleting}
-                    onClick={() => setActiveId(p._id)}
-                  />
-                ))}
-                <Button
-                  margin="1rem 0 0 1rem"
-                  border="thin dashed"
-                  size="8rem"
-                  className={css.presentaion_create_new}
-                  onClick={() => createPost()}
-                >
-                  + new presentation
-                </Button>
-              </ul>
-            </>
+            <Presentations {...props} />
           ) : (
             <div>
               {!activeSlide ? (

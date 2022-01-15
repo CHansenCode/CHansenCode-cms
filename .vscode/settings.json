@@ -1,4 +1,14 @@
 {
+  "workbench.colorCustomizations": {
+    "editor.foldBackground": "#ffffff00",
+    "editor.selectionBackground": "#00f7ff23",
+    "editor.lineHighlightBackground": "#ffffff00",
+    "editor.lineHighlightBorder": "#00f7ff07",
+    "editorLineNumber.foreground": "#ffffff13",
+    "editorIndentGuide.activeBackground": "#696969",
+    "editorIndentGuide.background": "#3a3a3a1c"
+  },
+
   "files.exclude": {
     //
 

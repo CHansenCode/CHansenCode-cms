@@ -1,0 +1,11 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .left,
+  .right {
+    display: flex;
+    align-content: center;
+  }
+}

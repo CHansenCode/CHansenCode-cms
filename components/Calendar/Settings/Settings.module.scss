@@ -1,0 +1,29 @@
+.wrapper {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  z-index: 100;
+  top: 2.5rem;
+  width: min-content;
+  padding: 0.5rem;
+
+  right: -0.5rem;
+
+  //init
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu_open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.inner {
+  width: 200px;
+  padding: 1rem;
+}
